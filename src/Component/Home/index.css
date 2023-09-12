@@ -1,0 +1,17 @@
+.link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+}
+
+.loader {
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* * {
+  border: 1px solid red;
+} */
