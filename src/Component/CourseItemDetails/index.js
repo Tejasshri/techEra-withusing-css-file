@@ -12,6 +12,7 @@ import {
   CourseDetails,
   CourseItemName,
 } from './styledComponent'
+import './index.css'
 
 const apiStatusList = {
   initial: 'INITIAL',
@@ -65,13 +66,13 @@ class CourseItemDetails extends Component {
     const {name, imageUrl, description} = courseDetails
 
     return (
-      <CourseItem>
-        <CourseImage src={imageUrl} alt={name} />
-        <CourseDetails>
-          <CourseItemName>{name}</CourseItemName>
-          <CourseDescription>{description}</CourseDescription>
-        </CourseDetails>
-      </CourseItem>
+      <div className="course-item-card">
+        <img className="course-image" src={imageUrl} alt={name} />
+        <div className="course-details">
+          <h1 className="course-item-names">{name}</h1>
+          <p className="course-description">{description}</p>
+        </div>
+      </div>
     )
   }
 
@@ -91,12 +92,10 @@ class CourseItemDetails extends Component {
 
   render() {
     return (
-      <>
-        <ItemDetails>
-          <Header />
-          {this.renderView()}
-        </ItemDetails>
-      </>
+      <div className="item-details">
+        <Header />
+        {this.renderView()}
+      </div>
     )
   }
 }

@@ -1,26 +1,22 @@
-import {
-  NotFoundView,
-  NotFoundImage,
-  NotFoundDescription,
-  NotFoundTitle,
-} from './styledComponent'
+import './index.css'
 
 import Header from '../Header'
 
 const NotFound = () => (
-  <>
+  <div>
     <Header />
-    <NotFoundView>
-      <NotFoundImage
+    <div className="not-found-view">
+      <img
+        className="not-found-image"
         src="https://assets.ccbp.in/frontend/react-js/tech-era/not-found-img.png"
         alt="not found"
       />
-      <NotFoundTitle>Page Not Found</NotFoundTitle>
-      <NotFoundDescription>
+      <h1 className="not-found-title">Page Not Found</h1>
+      <p className="not-found-description">
         We are sorry, the page you requested could not found.
-      </NotFoundDescription>
-    </NotFoundView>
-  </>
+      </p>
+    </div>
+  </div>
 )
 
 export default NotFound

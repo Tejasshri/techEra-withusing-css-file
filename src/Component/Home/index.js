@@ -5,14 +5,6 @@ import Loader from 'react-loader-spinner'
 import FailureBox from '../FailureView'
 import Header from '../Header'
 
-import {
-  AppContainer,
-  CourseHeading,
-  CourseListContainer,
-  CourseItem,
-  CourseImage,
-  CourseName,
-} from './styledComponent'
 import './index.css'
 
 const apiStatusList = {
@@ -58,16 +50,20 @@ class Home extends Component {
   renderCourseContainer = () => {
     const {courseList} = this.state
     return (
-      <CourseListContainer>
+      <ul className="course-list-container">
         {courseList.map(each => (
-          <CourseItem key={each.id}>
+          <li className="course-item" key={each.id}>
             <Link to={`/courses/${each.id}`} className="link">
-              <CourseImage src={each.logoUrl} alt={each.name} />
-              <CourseName>{each.name}</CourseName>
+              <img
+                className="course-image"
+                src={each.logoUrl}
+                alt={each.name}
+              />
+              <p className="course-name">{each.name}</p>
             </Link>
-          </CourseItem>
+          </li>
         ))}
-      </CourseListContainer>
+      </ul>
     )
   }
 
@@ -87,13 +83,11 @@ class Home extends Component {
 
   render() {
     return (
-      <>
-        <AppContainer>
-          <Header />
-          <CourseHeading>Courses</CourseHeading>
-          {this.renderView()}
-        </AppContainer>
-      </>
+      <div className="app-container">
+        <Header />
+        <h1 className="course-heading">Courses</h1>
+        {this.renderView()}
+      </div>
     )
   }
 }
