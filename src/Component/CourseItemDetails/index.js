@@ -4,14 +4,6 @@ import Loader from 'react-loader-spinner'
 import FailureBox from '../FailureView'
 import Header from '../Header'
 
-import {
-  ItemDetails,
-  CourseItem,
-  CourseImage,
-  CourseDescription,
-  CourseDetails,
-  CourseItemName,
-} from './styledComponent'
 import './index.css'
 
 const apiStatusList = {
